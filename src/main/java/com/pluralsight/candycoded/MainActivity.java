@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -74,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
@@ -81,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
     // ***
     // TODO - Task 1 - Show Store Information Activity
+
     // ***
 
     private void addCandiesToDatabase(Candy[] candies) {
